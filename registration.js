@@ -76,7 +76,7 @@ function validateForm() {
   }
      
   
-    function validateFormFromCookie();
+    function validateFormFromCookie();{}
     
     function getElementById(name) {
       name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
