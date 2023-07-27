@@ -1,80 +1,52 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Invitation Page</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script type="text/javascript" src="validate.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="top">
-        <a class="logo" href="index.html">CapellaVolunteers <spanclass="dotcom">.org
-      </div>
-      </a>
-      </div>
-      <nav>
-        <ul class="topnav">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="invitation.html">Invitation</a>
-          </li>
-          <li>
-            <a href="gallery.html">Gallery</a>
-          </li>
-          <li>
-            <a href="registration.html" class="active">Registration</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section id="pageForm">
-      <!-- Action has the fie that will laod after successful validation -->
-      <!-- When user clicks on submit button, onsubmit get triggered if it return false then actionwont triggered. -->
-      <form name="regform" action="confirm.html" onsubmit="return validate()" method="POST">
-        <label for="userName">Username:</label>
-        <input type="text" name="userName" placeholder="Enter your Username" />
-        <span id="erroruserName">
-          </div>
-          <br>
-          <label for="Password">Password:</label>
-          <input type="password" name="password" placeholder="Enter your Password" />
-          <span id="errorpassword">
-            </div>
-            <br>
-            <label for="passwordVerify">Verify your Password:</label>
-            <input type="password" name="passwordVerify" placeholder="Enter in your Passwordagain" />
-            <span id="errorpasswordVerify">
-              </div>
-              <br>
-              <label for="firstName">First Name:</label>
-              <input type="text" name="firstName" placeholder="Enter your First Name" />
-              <span id="errorfirstName">
-                </div>
-                <br>
-                <label for="hostName">Last Name:</label>
-                <input type="text" name="lastName" placeholder="Enter your Last Name" />
-                <span id="errorlastName">
-                  </div>
-                  <br>
-                  <label for="email">Email:</label>
-                  <input type="text" name="email" placeholder="Enter your Email Address" />
-                  <span id="erroremail">
-                    </div>
-                    <br>
-                    <label for="phoneNumber">Phone Number</label>
-                    <input type="text" name="phoneNumber" placeholder="Enter your Phone Number" />
-                    <span id="errorphoneNumber">
-                      </div>
-                      <br>
-                      <label for="signUpNewsletter">Sign up for newsletter:</label>
-                      <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes <input type="radio" name="signUpNewsletter" value="No"> No <span id="errorsignUpNewsletter">
-                        </div>
-                        <br>
-                        <!-- Submit button -->
-                        <input type="submit" value="Next step">
-      </form>
-    </section>
-  </body>
+ <html lang="en-US">
+<head>
+  <title>Invitation Page</title>
+ <link rel="stylesheet" type="text/css" href="css/main.css" />
+ <script src="js/registration.js"></script>
+ </head>
+<body>
+ <header>
+  <div class="top">
+  <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+  </div>
+  <nav>
+  <ul class="topnav">
+  <li><a href="index.html">Home</a>
+  </li>
+  <li><a href="invitation.html">Invitation</a>
+  </li>
+  <li><a href="gallery.html">Gallery</a>
+  </li>
+  <li><a href="registration.html" class="active">Registration</a>
+  </li>
+ </ul>
+ </nav>
+  </header>
+ <section id="pageForm">
+<!-- When user clicks on submit button, onsubmit gets triggered. if it returns false no action will occur. -->
+
+<form name="registration" action="confirm.html">
+
+  <label for="userName">Username:</label>
+ <input type="text" name="userName" placeholder="Enter your Username" />
+  <label for="Password">Password:</label>
+ <input type="password" name="password" placeholder="Enter your Password" />
+ <label for="passwordVerify">Verify your Password:</label>
+  <input type="password" name="passwordVerify" placeholder="Enter in your Password again" />
+ <label for="firstName">First Name:</label>
+ <input type="text" name="firstName" placeholder="Enter your First Name" />
+ <label for="hostName">Last Name:</label>
+  <input type="text" name="lastName" placeholder="Enter your Last Name" />
+  <label for="email">Email:</label>
+ <input type="text" name="email" placeholder="Enter your Email Address" />
+ <label for="phoneNumber">Phone Number</label>
+  <input type="text" name="phoneNumber" placeholder="Enter your Phone Number" />
+ <label for="signUpNewsletter">Sign up for newsletter:</label>
+ <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes
+ <input type="radio" name="signUpNewsletter" value="No"> No
+ <input type="submit" value="Next step" onClick="formValidation();" />
+  </form>
+  </section>
+ </body>
 </html>
