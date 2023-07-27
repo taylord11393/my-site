@@ -1,52 +1,88 @@
 <!DOCTYPE html>
- <html lang="en-US">
-<head>
-  <title>Invitation Page</title>
- <link rel="stylesheet" type="text/css" href="css/main.css" />
- <script src="js/registration.js"></script>
- </head>
-<body>
- <header>
-  <div class="top">
-  <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-  </div>
-  <nav>
-  <ul class="topnav">
-  <li><a href="index.html">Home</a>
-  </li>
-  <li><a href="invitation.html">Invitation</a>
-  </li>
-  <li><a href="gallery.html">Gallery</a>
-  </li>
-  <li><a href="registration.html" class="active">Registration</a>
-  </li>
- </ul>
- </nav>
-  </header>
- <section id="pageForm">
-<!-- When user clicks on submit button, onsubmit gets triggered. if it returns false no action will occur. -->
-
-<form name="registration" action="confirm.html">
-
-  <label for="userName">Username:</label>
- <input type="text" name="userName" placeholder="Enter your Username" />
-  <label for="Password">Password:</label>
- <input type="password" name="password" placeholder="Enter your Password" />
- <label for="passwordVerify">Verify your Password:</label>
-  <input type="password" name="passwordVerify" placeholder="Enter in your Password again" />
- <label for="firstName">First Name:</label>
- <input type="text" name="firstName" placeholder="Enter your First Name" />
- <label for="hostName">Last Name:</label>
-  <input type="text" name="lastName" placeholder="Enter your Last Name" />
-  <label for="email">Email:</label>
- <input type="text" name="email" placeholder="Enter your Email Address" />
- <label for="phoneNumber">Phone Number</label>
-  <input type="text" name="phoneNumber" placeholder="Enter your Phone Number" />
- <label for="signUpNewsletter">Sign up for newsletter:</label>
- <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes
- <input type="radio" name="signUpNewsletter" value="No"> No
- <input type="submit" value="Next step" onClick="formValidation();" />
-  </form>
-  </section>
- </body>
+<html lang="en-US">
+    <head>
+        <title>Registration Page</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <script src="registration.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="top">
+                <a class="logo" href="index.html">
+                    CapellaVolunteers<span class="dotcom">.org</span>
+                </a>
+            </div>
+            <nav>
+                <ul class="topnav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="invitation.html">Invitation</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="registration.html" class="active">Registration</a>
+                    </li>
+                    <li>
+                        <a href="interests.html">Interests</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section id="pageForm">
+            <form action="/registration.html" onsubmit="return validateForm()" method="get">
+                <label for="userName">Username:
+            </label>
+                <label2 id="userNameWarning" style="color: red;"></label2>
+                <input type="text" name="userName" id="userName" required placeholder="Enter your Username"/>
+                <label for="password">Password:
+            </label>
+                <label2 id="passwordWarning" style="color: red;"></label2>
+                <input type="password" name="password" id="password" required placeholder="Enter your Password"/>
+                <label for="passwordVerify">Verify your Password:
+            </label>
+                <label2 id="passwordVerifyWarning" style="color: red;"></label2>
+                <input type="password" name="passwordVerify" id="passwordVerify" required placeholder="Enter in your Password again"/>
+                <label for="firstName">First Name:
+            </label>
+                <label2 id="firstNameWarning" style="color: red;"></label2>
+                <input type="text" name="firstName" id="firstName" required placeholder="Enter your First Name"/>
+                <label for="lastName">Last Name:
+            </label>
+                <label2 id="lastNameWarning" style="color: red;"></label2>
+                <input type="text" name="lastName" id="lastName" required placeholder="Enter your Last Name"/>
+                <label for="email">Email:
+            </label>
+                <label2 id="emailWarning" style="color: red;"></label2>
+                <input type="email" name="email" id="email" placeholder="xxx@xxx.xxx"/>
+                <label for="phoneNumber">Phone Number:
+            </label>
+                <label2 id="phoneNumberWarning" style="color: red;"></label2>
+                <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="(xxx) xxx-xxxx"/>
+                <label for="signUpNewsletter">Sign up for newsletter:
+            </label>
+                <input type="radio" id="signUpNewsletterYes" name="signUpNewsletter" value="Yes">
+                <label for="signUpNewsletterYes">Yes</label>
+                <br>
+                <input type="radio" id="signUpNewsletterNo" name="signUpNewsletter" value="No">
+                <label for="signUpNewsletterNo">No</label>
+                <br>
+                <input type="submit" formaction="interests.html" value="Next step">
+            </form>
+        </section>
+        <script>
+            function getCookie(t) {
+                for (var e = t + "=", n = decodeURIComponent(document.cookie).split(";"), o = 0; o < n.length; o++) {
+                    for (var i = n[o]; " " == i.charAt(0); )
+                        i = i.substring(1);
+                    if (0 == i.indexOf(e))
+                        return i.substring(e.length, i.length)
+                }
+                return ""
+            }
+        </script>
+    </body>
 </html>
