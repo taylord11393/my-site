@@ -1,10 +1,9 @@
 // Preload images
 var imageUrls = [
-  "image1.jpg",
-  "image2.jpg",
-  "image3.jpg",
-  "image4.jpg",
-  "image5.jpg"
+  "firefighter.jpg",
+  "event.jpg",
+  "silhouette.jpg",
+  "work.jpg"
 ];
 
 function preloadImages() {
@@ -18,12 +17,12 @@ function preloadImages() {
 function applyRolloverEffect(myImage, newImageUrl) {
   var originalImageUrl = myImage.src;
 
-  imageElement.addEventListener("mouseover", function() {
-    imageElement.src = newImageUrl;
+  myImage.addEventListener("mouseover", function() {
+    myImage.src = newImageUrl;
   });
 
-  imageElement.addEventListener("mouseout", function() {
-    imageElement.src = originalImageUrl;
+  myImage.addEventListener("mouseout", function() {
+    myImage.src = originalImageUrl;
   });
 }
 
