@@ -96,7 +96,7 @@ function formValidation() {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=taylord11393/my-site/confirm.php";
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
   function userid_validation(uid)//CHECKING FOR USER ID VALIDATION
   {
@@ -180,4 +180,27 @@ function formValidation() {
   alert("Please enter the phone number with digits in this form: XXX XXX XXXX");
   return false;
   }
-  }
+  function getSelectValues(select) {
+    var result = [];
+    var options = select && select.options;
+    var opt;
+    for (var i = 0, iLen = options.length; i < iLen; i++) {
+        opt = options[i];
+        if (opt.selected) {
+            result.push(opt.value || opt.text);
+        }
+    }
+    return result;
+} var data = {
+    uid: document.myForm.userName.value,
+    fName: document.myForm.firstName.value,
+    lName: document.myForm.lastName.value,
+    pass: document.myForm.password.value,
+    email: document.myForm.email.value,
+    phone: document.myForm.phoneNumber.value,
+    signUp: document.myForm.signUpNewsletter.value,
+    interests: getSelectValues(document.myForm.interests).toString(),
+    comment: document.myForm.comment.value,
+    referredBy: document.myForm.referredBy.value,
+};
+var dataString = "uid=" + data.uid + ",fName=" + data.fName + ",lName=" + data.lName + ",pass=" + data.pass + "" + +",email=" + data.email + " ,phone=" + data.phone + " ,signUp=" + data.signUp + " ,interests=" + data.interests + "++", comment=" + data.comment + " ,referredBy=" + data.referredBy + " ; }
