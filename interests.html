@@ -5,7 +5,6 @@
     <title>Interests Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
-
 <body>
     <header>
         <div class="top">
@@ -27,27 +26,37 @@
     </header>
     <section id="pageForm">
         <form action="#">
-			
-            <!--
-			Include other form fields here
-			
-			-->
-            <input type="hidden" name="userName"/>
-            <input type="hidden" name="password"/>
-            <input type="hidden" name="passwordVerify" />
-            <input type="hidden" name="firstName" />
-            <input type="hidden" name="lastName" />
-            <input type="hidden" name="email"/>
-            <input type="hidden" name="lastName" />
-			<input type="hidden" name="signUpNewsletter"/ >
-			
-            <input type="submit" value="Register">
+            <form onsubmit = "checkPageForm()">
+                <label for="Interest"> Enter Interest:</label>
+			<input type = "checkbox" name = "Painting"placeholder ="Painting" />
+                <label for="Painting">Painting:
+                    <input type = "checkbox" name = "Drawing"placeholder ="Drawing" />
+                    <label for="Drawing">Drawing:
+                        <input type = "checkbox" name= "Writing"placeholder ="Writing" />
+                        <label for="Writing">Writing:
+                            <label for="signUpNewsletter">Sign up for news letter:
+                            </label>
+                            <input type="radio" name="signUpNewsletter" value="Yes" checked /> Yes
+<input type="radio" name="signUpNewsletter" value="No"> No
+                            <label for = "Comments">Comments:</label>
+                            <input type="freeform text" name="Comments" placeholder="Comments" />
+                            <label for = "Referred by">Referred by:</label>
+                            <input type="text" name="Referred by" placeholder="Referred by" />
+                            <input type="hidden" name="userName"/>
+                            <input type="hidden" name="password"/>
+                            <input type="hidden" name="passwordVerify"/>
+                            <input type="hidden" name="firstName"/>
+                            <input type="hidden" name="lastName"/>
+                            <input type="hidden" name="email"/>
+                            <input type="hidden" name="lastName"/>
+                            <input type="hidden" name="signUpNewsletter"/>
+                            <input type="submit" value="Confirm">
+                        </label>
+                    </label>
+                </label>
+            </form>
         </form>
     </section>
-
-    <footer>This events site is for IT-FP3215 tasks.
-    </footer>
-</body>
-
+    </body>
 </html>
 

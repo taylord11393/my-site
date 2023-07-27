@@ -7,6 +7,51 @@
 </head>
 
 <body>
+    <script type="text/javascript">
+function formValidation() {
+ // Get all the input fields
+ var uid = document.registration.userName; 
+ var passid = document.registration.password;
+ var conpassid = document.registration.passwordVerify;
+ var fname = document.registration.firstName;
+ var Iname = document.registration.lastName;
+ var uemail = document.registration.email;
+ var phn = document.registration.phno.value;
+ 
+ // Validate all the fields
+ if (userid_validation(uid)) {
+   if (passid_validation(passid)) {
+     if (checkpass(passid, compassid)) {
+       if (allLetter(fname)) {
+         if (allLetter(Iname)) {
+           if (ValidateEmail(uemail)) {
+             if (phonenumber(phn)) {
+               // All fields are valid, submit the form
+               document.forms["registration"].submit();
+               // Store the input fields into cookies
+               setCookie("uid", uid.value, 1);
+               setCookie("passid", passid.value, 1);
+               setCookie("fname", fname.value, 1);
+               setCookie("lname", Iname.value, 1);
+               setCookie("uemail", uemail.value, 1);
+               setCookie("phn", phn, 1);
+             }
+           }
+         }
+       }
+     }
+   }
+   return false;
+ }
+ 
+ function setCookie(cname, cvalue, exdays) {
+   var d= new Date();
+   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+   var expires= "expires=" + d.toUTCString();
+   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+ }
+}
+</script>
     <header>
         <div class="top">
             <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
@@ -58,6 +103,7 @@
             <input type="submit" value="Next step">
         </form>
     </section>
-</body>
-</html>
 
+</body>
+
+</html>
