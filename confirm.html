@@ -25,16 +25,23 @@
         <footer>This events site is for IT-FP3215 tasks.
     </footer>
         <script>
-            function getCookie(t) {
-                for (var e = t + "=", n = decodeURIComponent(document.cookie).split(";"), o = 0; o < n.length; o++) {
-                    for (var i = n[o]; " " == i.charAt(0); )
-                        i = i.substring(1);
-                    if (0 == i.indexOf(e))
-                        return i.substring(e.length, i.length)
-                }
-                return ""
-            }
-    
-        </script>
+       // Function to read the cookie and display its contents
+       function displayCookieData() {
+           var cookieData = document.cookie.split("; ");
+           var dataContainer = document.getElementById("dataContainer");
+
+           for (var i = 0; i < cookieData.length; i++) {
+               var nameValuePair = cookieData[i].split("=");
+               var name = nameValuePair[0];
+               var value = nameValuePair[1];
+               dataContainer.innerHTML += "<p><b>" + name + ":</b> " + decodeURIComponent(value) + "</p>";
+           }
+       }
+
+       // Call the function when the page loads
+       window.onload = displayCookieData;
+   </script>
+   <div id="dataContainer"></div>
     </body>
 </html>
+    

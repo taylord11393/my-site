@@ -56,6 +56,13 @@
                 <p>Referred by:</p>
                 <input type="text" id="referredBy" name="referredBy">
                 <br>
+                <?php
+       if ($_SERVER["REQUEST_METHOD"] == "POST") {
+           foreach ($_POST as $key => $value) {
+               echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
+           }
+       }
+       ?>
                 <input type="submit" formaction="confirm.html" value="Submit">
             </form>
         </section>
